@@ -1,0 +1,1 @@
+This layer contains the core business logic of your application. It's where you define how your application should behave based on the inputs it receives. This is usually where you'll find services, use-case implementations, and business rules. The domain layer is independent of any specific infrastructure or technology – it simply defines what your application does.
