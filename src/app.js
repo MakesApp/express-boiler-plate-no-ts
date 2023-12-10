@@ -15,7 +15,7 @@ app.use(corsMiddleware);
 app.use(express.json());
 
 // Routes
-app.use('/users', userRoutes);
+app.use('/api/users', userRoutes);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404, true));

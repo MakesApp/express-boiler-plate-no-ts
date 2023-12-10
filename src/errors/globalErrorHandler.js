@@ -1,5 +1,4 @@
 import errorManagement from './utils/errorMangement.js'; // Update path as needed
-import handleErrors from './utils/errorHandlers.js'; // Update path as needed
 
 const globalErrorHandler = (error, req, res, next) => {
   const statusCode = error.statusCode || errorManagement.commonErrors.internalServerError.code;
@@ -13,7 +12,6 @@ const globalErrorHandler = (error, req, res, next) => {
   //   mailer.sendMail(configuration.adminMail, "Critical error occurred", error);
   // }
 
-  if (handleErrors(error, res)) return;
 
   if (!error.isOperational) {
     process.exit(1);
