@@ -2,7 +2,7 @@ import 'express-async-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import globalErrorHandler from './errors/globalErrorHandler.js';
-import catchProgrammingErrors from './errors/catchProgrammingErrors.js';
+import errorDelegatorMiddleware from './errors/errorDelegatorMiddleware.js';
 import AppError from './errors/AppError.js';
 import corsMiddleware from './middlewares/cors.js';
 import userRoutes from './apps/users/entryPoints/userRoutes.js';
@@ -22,7 +22,7 @@ app.all('*', (req, res, next) => {
 });
 
 // Error handling
-app.use(catchProgrammingErrors);
+app.use(errorDelegatorMiddleware);
 app.use(globalErrorHandler);
 
 export default app;
